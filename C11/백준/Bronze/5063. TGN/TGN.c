@@ -1,0 +1,1 @@
+main(int i,int x,int y,int z,int a){scanf("%d",&i);for(int j=0;j<i;j++){scanf("%d %d %d",&x,&y,&z);a=y-x-z;puts(a>0?"advertise":!a?"does not matter":"do not advertise");}}
