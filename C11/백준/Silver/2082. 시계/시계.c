@@ -64,19 +64,13 @@ int main() {
     int min_h1 = 2, min_h2 = 9, min_m1 = 5, min_m2 = 9;
 
     for (int i = 0; i < 5; i++) {
-        if (fgets(line, sizeof(line), stdin) == NULL) {
-            return 1; // 입력 오류 처리
-        }
-        // line의 입력값이 제대로 4개의 값으로 나뉘어지지 않으면 오류 반환
-        if (sscanf(line, "%3s %3s %3s %3s", input[0][i], input[1][i], input[2][i], input[3][i]) != 4) {
-            return 1; // 입력 오류 처리
-        }
+        fgets(line, sizeof(line), stdin);
+        sscanf(line, "%3s %3s %3s %3s", input[0][i], input[1][i], input[2][i], input[3][i]);
     }
 
-    // 각 시간을 조합하여 최소 시간 값을 찾기
     for (int h1 = 0; h1 <= 2; h1++) {
         for (int h2 = 0; h2 <= 9; h2++) {
-            if (h1 == 2 && h2 > 3) continue; // 24시 제한 조건
+            if (h1 == 2 && h2 > 3) continue;
             for (int m1 = 0; m1 <= 5; m1++) {
                 for (int m2 = 0; m2 <= 9; m2++) {
                     char temp[4][5][3];
