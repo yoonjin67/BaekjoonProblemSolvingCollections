@@ -1,0 +1,2 @@
+#include<stdlib.h>
+main(){char x[2][4], y[2][4];register int a,b,c,n,i;scanf("%s %s", x[0],x[1]);for(c=2,n=0;c>=0;c--,n++){for(i=0;i<2;i++)y[i][n]=x[i][c];}a=atoi(y[0]);b=atoi(y[1]);printf("%d", a>b?a:b);}
